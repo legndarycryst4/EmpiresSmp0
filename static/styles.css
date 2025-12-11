@@ -1,0 +1,139 @@
+/* Basic Reset and Font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Using a modern, clean font */
+    display: flex;
+    justify-content: center; /* Center the card horizontally */
+    align-items: center;    /* Center the card vertically */
+    min-height: 100vh;
+    overflow-y: auto; /* Allow scrolling if content is taller than screen */
+    background: transparent; /* Background handled by gradient div */
+}
+
+/* Full-page Gradient Background */
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle light blue to light purple gradient */
+    background: linear-gradient(135deg, #e0f2f7 0%, #e0e7fa 100%); 
+    z-index: -1; /* Ensures it stays behind the card */
+}
+
+/* Main Card Styling (Frosted Glass Effect) */
+.card {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    /* 🔑 The magic for the frosted glass look! */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 30px;
+    text-align: center;
+    max-width: 380px; /* Adjust card width */
+    width: 90%; /* Responsive width */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between main sections */
+    margin: 20px; 
+}
+
+/* Avatar Section */
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 150px; /* Size of the avatar */
+    height: 150px;
+    border-radius: 50%; /* Makes it circular */
+    border: 4px solid rgba(255, 255, 255, 0.8); /* White border */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+    object-fit: cover; /* Ensures image covers the circle */
+}
+
+h2 {
+    font-size: 1.6em;
+    color: #333;
+    margin: 0; 
+    font-weight: 600;
+}
+
+/* Social Icons Row (Twitch, Spotify, YouTube) - The small row of icons */
+.social-icons-row {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    margin-bottom: 20px;
+}
+
+.social-icons-row a {
+    color: #555; /* Darker gray for icons */
+    font-size: 28px; /* Size of the icons */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icons-row a:hover {
+    color: #007bff; /* Highlight color on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* "Scroll for all Socials" text */
+.scroll-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* More Socials Section (The stack of colored buttons) */
+.more-socials-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between each button */
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Subtle separator line */
+}
+
+.more-socials-section a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content within button */
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    background-color: #888; 
+}
+
+.more-socials-section a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Hover effect for the stacked buttons */
+.more-socials-section a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific platform colors for the stacked buttons */
+.more-socials-section a[aria-label="Twitter/X"] { background-color: #1DA1F2; }
+.more-socials-section a[aria-label="Instagram"] { background-color: #E4405F; }
+.more-socials-section a[aria-label="Twitch"] { background-color: #9146FF; } /* Updated Twitch color for better contrast */
+.more-socials-section a[aria-label="YouTube"] { background-color: #ff0000; }
+.more-socials-section a[aria-label="Discord"] { background-color: #7289da; }
+.more-socials-section a[aria-label="GitHub"] { background-color: #333; }
+.more-socials-section a[aria-label="Spotify"] { background-color: #1DB954; }
